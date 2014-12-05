@@ -3,6 +3,8 @@ package com.coolweather.app.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.youmi.android.AdManager;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -79,6 +81,10 @@ public class ChooseAreaActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		// 初始化接口，应用启动的时候调用
+		// 参数：appId, appSecret, 调试模式
+		AdManager.getInstance(this).init("ee3ca4f286ec3283", "7497c13e3594f088", false);
 		
 		isFromWeatherActivity = getIntent().getBooleanExtra("from_weather_activity", false);
 		
